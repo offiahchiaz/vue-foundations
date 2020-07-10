@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vuejs Foundations</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <h1>{{ greet('Afternoon') }}</h1>
+      <p>{{ name }}</p>
+      <p>{{ job }}</p>
+
+      <h1>Data Binding</h1>
+      <a v-bind:href="website" target="_blank">Cohotek</a>
+      <input type="text" v-bind:value="name" />
+      <p v-html="websiteTag"></p>
+
+      <h1>Events</h1>
+      <button @click.once="add(1)">Add a Year</button>
+      <button v-on:click="subtract(1)">Subtract a Year</button>
+      <button @dblclick="add(10)">Add 10 Years</button>
+      <button v-on:dblclick="subtract(10)">Subtract 10 Years</button>
+      <p>My age is {{ age }}</p>
+
+      <div id="canvas" v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
+
+      <h1>Event Modifiers</h1>
+      <a v-on:click.prevent="click" href="https://cohotek.tech">YES</a>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
